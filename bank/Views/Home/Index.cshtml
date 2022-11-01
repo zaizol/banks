@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Create Customer";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="row" style="padding:5px;margin:5px;">
+                <div class="col-12 text-center"><h3>Register New Account</h3></div>
+            </div>
+            <div class="row" style="padding:5px;margin:5px;">
+                <div class="col-2 text-right">IBAN</div>
+                <div class="col-4"><input type="text" class="form-control txt_iban" maxlength="50" /></div>
+                <div class="col-2 text-right">Customer name</div>
+                <div class="col-4"><input type="text" class="form-control txt_fullname" maxlength="100" /></div>
+            </div>
+            <div class="row" style="padding:5px;margin:5px;">
+                <div class="col-2 text-right"></div>
+                <div class="col-10"><input type="button" class="btn btn-info btn_addbank" value="Add new bank account" /></div>
+            </div>
+            <div class="row div_bank" style="display: none;padding: 5px; margin: 5px;">
+                <div class="col-12">
+                    <div class="row" style="padding:5px;margin:5px;">
+                        <div class="col-2 text-right">Bank Name</div>
+                        <div class="col-4">
+                            <select class="custom-select ddl_bank">
+                                <option value="">-- select bank name --</option>
+                                <option value="bank1">bank1</option>
+                                <option value="bank2">bank2</option>
+                                <option value="bank3">bank3</option>
+                            </select>
+                        </div>
+                        <div class="col-2 text-right">Account Name</div>
+                        <div class="col-4"><input type="text" class="form-control txt_accountname" maxlength="50" /></div>
+                    </div>
+                    <div class="row" style="padding:5px;margin:5px;">
+                        <div class="col-2 text-right">Account no</div>
+                        <div class="col-4"><input type="text" class="form-control txt_accountno" maxlength="50" /></div>
+                        <div class="col-2 text-right">Deposit Amount</div>
+                        <div class="col-4"><input type="text" class="form-control txt_amt decimal" /></div>
+                    </div>
+
+                    <div class="row" style="padding:5px;margin:5px;">
+                        <div class="col-2 text-right"></div>
+                        <div class="col-10"><input type="button" class="btn btn-warning btn_insertbank" value="+New Account" />&nbsp;&nbsp;&nbsp;<input type="button" class="btn btn-danger btn_cancelbank" value="Cancel" /></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding:5px;margin:5px;">
+                <div class="col-2 text-right"></div>
+                <div class="col-10">
+                    <table class="table table-responsive tbl_bank">
+                        <thead>
+                            <tr>
+                                <td>Bank Name</td>
+                                <td>Account Name</td>
+                                <td> Account No.</td>
+                                <td>Balance Amount</td>
+                                <td></td>
+                            </tr>
+
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-12"  style="padding:5px;margin:5px;">
+            <div class="row"  style="padding:5px;margin:5px;">
+                <div class="col-2 text-right"></div>
+                <div class="col-10"><input type="button" class="btn btn-primary btn_save" value="Create New Customer" /></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="@Url.Content("~/js/index.js?update=" + @DateTime.Now.ToString("ddMMyyyyHHmmss"))" type="text/javascript"></script>

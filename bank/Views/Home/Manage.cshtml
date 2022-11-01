@@ -1,0 +1,142 @@
+﻿@{
+    ViewData["Title"] = "Manage Banks";
+}
+
+<div class="row" style="padding:5px;margin:5px;">
+    <div class="col-12 text-center"><h3>Manage Banks</h3></div>
+</div>
+<div class="row">
+    <div class="col-6 ">
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-12">
+                <table class="table table-responsive tbl_bank">
+                    <thead>
+                        <tr>
+                            <td>IBAN No.</td>
+                            <td>Full Name</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 div_deposit" style="display:none;">
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Bank Name</div>
+            <div class="col-8"><select class="custom-select ddl_bank"></select></div>
+        </div>
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Account Amt</div>
+            <div class="col-8 daccount"></div>
+        </div>
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Deposit Amt</div>
+            <div class="col-8"><input type="text" class="form-control decimal txt_deposit" /></div>
+        </div>
+
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Fee Amt</div>
+            <div class="col-8 dfee"></div>
+        </div>
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Balance Amt</div>
+            <div class="col-8 dbalance"></div>
+        </div>
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4"></div>
+            <div class="col-8"><input type="button" class="btn btn-warning btn_savedeposit" value="Deposit" />&nbsp;&nbsp;&nbsp; <input type="button" class="btn btn-danger btn_canceldeposit" value="Cancel" /></div>
+        </div>
+    </div>
+    <div class="col-6 div_withdraw" style="display:none;">
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Bank Name</div>
+            <div class="col-8"><select class="custom-select wddl_bank"></select></div>
+        </div>
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Account Amt</div>
+            <div class="col-8 waccount"></div>
+        </div>
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Withdraw Amt</div>
+            <div class="col-8"><input type="text" class="form-control decimal txt_withdraw" /></div>
+        </div>
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Balance Amt</div>
+            <div class="col-8 wbalance"></div>
+        </div>
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4"></div>
+            <div class="col-8"><input type="button" class="btn btn-warning btn_savewithdraw" value="Withdraw" />&nbsp;&nbsp;&nbsp; <input type="button" class="btn btn-danger btn_cancelwithdraw" value="Cancel" /></div>
+        </div>
+    </div>
+    <div class="col-6 div_transfer" style="display:none;">
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Bank Name</div>
+            <div class="col-8"><select class="custom-select fddl_bank"></select></div>
+        </div>
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Account Amt</div>
+            <div class="col-8 taccount"></div>
+        </div>
+        <div class="row div_moveowner" style="padding:5px;margin:5px;display:none;">
+            <div class="col-4 text-right"></div>
+            <div class="col-8"><input type="checkbox" class="custom-checkbox chk_owner">Move to another owner bank account</div>
+        </div>
+
+        <div class="row div_customer" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Customer Name</div>
+            <div class="col-8"><select class="custom-select ddl_cus"></select></div>
+        </div>
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Target Account</div>
+            <div class="col-8"><select class="custom-select tddl_bank"></select></div>
+        </div>
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Target Amt</div>
+            <div class="col-8 ttaccount"></div>
+        </div>
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Transfer Amt</div>
+            <div class="col-8"><input type="text" class="form-control decimal txt_transfer" /></div>
+        </div>
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Balance Amt</div>
+            <div class="col-8 tbalance"></div>
+        </div>
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4 text-right">Target Balance Amt</div>
+            <div class="col-8 ttbalance"></div>
+        </div>
+        <div class="row" style="padding:5px;margin:5px;">
+            <div class="col-4"></div>
+            <div class="col-8"><input type="button" class="btn btn-warning btn_savetransfer" value="Transfer" />&nbsp;&nbsp;&nbsp; <input type="button" class="btn btn-danger btn_canceltransfer" value="Cancel" /></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="row" style="padding:5px;margin:5px;">
+        <div class="col-12">
+            <table class="table table-responsive table-striped tbl_txn">
+                <thead>
+                    <tr>
+                        <td>ActionDate</td>
+                        <td>IBAN No.</td>
+                        <td>Account</td>
+                        <td>Action</td>
+                        <td>Debit/Credit</td>
+                        <td>From Amount</td>
+                        <td>Amount</td>
+                        <td>Fee</td>
+                        <td>Balance Amount</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/js/manage.js?update=" + @DateTime.Now.ToString("ddMMyyyyHHmmss"))" type="text/javascript"></script>
